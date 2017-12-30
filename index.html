@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>BYU Guessing Game</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- local css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+  </head>
+  <body> 
+    <div id="header"><img src="assets/images/banner.png"></div>
+    <div class="container">
+        <div class="col-sm-12">
+          <h2 id="view-hint" ></h2>
+          
+        </div>
+        <div id="spaces" class="col-sm-12">
+          <p id="name-view"></p>
+        </div>
+        <div class="col-sm-2"></div>
+        <div id="guesses-left"  class="box1 col-sm-2">
+          
+        </div>
+        <div class="box1 col-sm-2" >
+          <h4>Letters Guessed:</h4>
+          <h3 id="letters-guessed"></h3>
+        </div>
+        <div class="box1 col-sm-2" >
+          <h1>Wins: <span id="wins"></span></h1>
+        </div>
+        <div class="box1 col-sm-2">
+          <h1>losses: <span id="losses"></span></h1>
+        </div>
+        <div class="col-sm-2"></div>
+      </div>
+    </div>
+    <!-- jquery cdn -->
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+    <!-- Linking to our JavaScript file. -->
+    <script type="text/javascript" src="assets/logic/game.js"></script>
+  </body>
+</html>

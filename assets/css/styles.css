@@ -1,0 +1,62 @@
+body {
+	margin: 0;
+	background-color: #666;
+	background-image: url(../images/stadium_photo_back16.jpg);
+	background-attachment: fixed;
+}
+
+#header {
+	background-image: url(../images/header-bg.png);
+	background-color: rgb(35, 35, 239);
+	text-align: center;
+	height: 153px;
+	width: 100%;
+	margin: 0;
+	padding: 20px;
+	border-bottom: solid 10px #fff;
+
+}
+.container {
+	/*margin-left: 20%;
+	margin-right: 20%;*/
+	text-align: center;
+	background-color: rgba(87, 85, 85, 0.87);
+	background-image: url(../images/container-bg.jpg);
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+	color: #fff;
+	padding: 20px;
+	border: solid 1px #ccc;
+	clear: both;
+	height:100vh;
+}
+
+.col-sm-12 {
+	text-align: center;
+}
+#guesses-left {
+	font-size: 18px;
+	color: #F81014;
+}
+
+.box1 {
+	float: left;
+	color: #fff;
+	border: solid 4px #fff;
+	margin: 5px;
+	padding: 10px;
+	background-color: #333;
+	height: 150px;
+}
+
+
+
+#spaces {
+	
+	float: center;
+}
+#name-view {
+	font-size: 200px;
+	font-weight: bold;
+}
