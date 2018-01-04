@@ -1,73 +1,97 @@
 /*this is a trivia game of sorts where players will try to guess the 
-names of famous BYU athletes and coaches before they run out of guesses*/
-// In this one I am housing all my logic and variables in a giant object for neatness and to get around scope.
+names of famous BYU athletes and coaches before they run out of guesses. I got a lot of help from another game
+we created in our bootcamp so I can't take credit for a lot of the logic...I created this game to help me better 
+understand the logic in that other game I borrowed it from.*/
+// In this one I am housing all my logic and variables in a giant object for neatness.
 var game = {
 	namesToPick: {
 		lavell: {
-			hint: "Hall of fame BYU coach."
+			hint: "Hall of fame BYU coach.",
+			video: "https://www.youtube.com/embed/Dqy52PZiJO8"
 		},
 		chow: {
-			hint: "Legendary OC who also coached at UCLA, USC, and in the NFL"
+			hint: "Legendary OC who also coached at UCLA, USC, and in the NFL",
+			video: "https://www.youtube.com/embed/gV88RulSAEY"
 		},
 		anae:{
-			hint: "OC from the tree of Leach."
+			hint: "OC from the tree of Leach.",
+			video: "https://www.youtube.com/embed/GhHWkaHvJNc"
 		},
 		grimes:{
-			hint: "LSU OL coach who played under Andy Reid"
+			hint: "LSU OL coach who played under Andy Reid",
+			video: "https://www.youtube.com/embed/1nUg9rtwHC4"
 		},
 		doman:{
-			hint: "The dominator."
+			hint: "The dominator.",
+			video: "https://www.youtube.com/embed/eHARVLfkva4"
 		},
 		detmer:{
-			hint: "Heisman"
+			hint: "Heisman",
+			video: "https://www.youtube.com/embed/T_Kbzr7WFnA"
 		},
 		young:{
-			hint: "Legendary Niners QB"
+			hint: "Legendary Niners QB",
+			video: "https://www.youtube.com/embed/Cc1u-qTt71k"
 		},
 		unga:{
-			hint: "Timpview product who was overlooked yet became a record setting RB under Bronco."
+			hint: "Timpview product who was overlooked yet became a record setting RB under Bronco.",
+			video: "https://www.youtube.com/embed/IslHdkd9pD8"
 		},
 		reid:{
-			hint: "NFL head coach at Philadephia and Kansas City"
+			hint: "NFL head coach at Philadephia and Kansas City",
+			video: "https://youtu.be/fVomXGYFsQM"
 		},
 		matich:{
-			hint: "OL from the '84 championship who is currently an ESPN analyst"
+			hint: "OL from the '84 championship who is currently an ESPN analyst",
+			video: "https://www.youtube.com/embed/DDoSiPjeheI"
 		},
 		holmgren:{
-			hint: "NFL head coach who led 2 teams to the superbowl and won one with Brett Favre as his QB"
+			hint: "NFL head coach who led 2 teams to the superbowl and won one with Brett Favre as his QB",
+			video: "https://www.youtube.com/embed/F7r4Ysi3X-0"
 		},
 		mili:{
-			hint: "Athletic TE on the '96 football team that injured his knee in the WAC championship against Wyoming."
+			hint: "Athletic TE on the 96 football team that injured his knee in the WAC championship against Wyoming.",
+			video: "https://www.youtube.com/embed/gXYiLMnbosE"
 		},
 		mcmahon:{
-			hint: "80s QB who led the Chicago Bears to a superbowl victory."
+			hint: "80s QB who led the Chicago Bears to a superbowl victory.",
+			video: "https://www.youtube.com/embed/65JuBLd2e2A"
 		},
-		bronco:{
-			hint: "Post Lavell head coach who became one of the winningest coaches in history."
+		mendenhall:{
+			hint: "Post Lavell head coach who became one of the winningest coaches in history.",
+			video: "https://www.youtube.com/embed/fKUCp-2edYA"
 		},
 		williams:{
-			hint: "SwagDaddy...record setting RB"
+			hint: "SwagDaddy...record setting RB",
+			video: "https://www.youtube.com/embed/tubrdY1jr8o"
 		},
 		staley:{
-			hint: "Doak Walker award"
+			hint: "Doak Walker award",
+			video: "https://www.youtube.com/embed/0gEdW0KoXpM"
 		},
 		bosco:{
-			hint: "'84 championship QB"
+			hint: "84 championship QB",
+			video: "https://www.youtube.com/embed/XABaIzF3p38"
 		},
 		wilson:{
-			hint: "QB drafted by the Oakland Raiders"
+			hint: "QB drafted by the Oakland Raiders",
+			video: "https://www.youtube.com/embed/A0pf_sJI5w0"
 		},
 		nielson:{
-			hint: "QB drafted by the NFL's Houston Oilers and played with them for six years"
+			hint: "QB drafted by the NFL's Houston Oilers and played with them for six years",
+			video: "https://www.youtube.com/embed/Tx_Msbqk0go"
 		},
 		ainge:{
-			hint: "Played on two NBA championship teams at Boston, 1984 and 86"
+			hint: "Played on two NBA championship teams at Boston, 1984 and 86",
+			video: "https://www.youtube.com/embed/GMTu8-3xMYQ"
 		},
 		bradley:{
-			hint: "7 foot 6 inches...drafted by the Philadephia 76ers"
+			hint: "7 foot 6 inches...drafted by the Philadephia 76ers",
+			video: "https://www.youtube.com/embed/0mMqkdLjss0"
 		},
 		lewis:{
-			hint: "One of the best tightends who ended up playing for the Philadephia Eagles."
+			hint: "One of the best tightends who ended up playing for the Philadephia Eagles.",
+			video: "https://www.youtube.com/embed/4Y45wJE7-N8"
 		}
 	},
 	// end of namesToPick
@@ -81,6 +105,9 @@ var game = {
 	guessesLeft: 0,
 	wins: 0,
 	losses: 0,
+	modal: document.getElementById('myModal'),
+	span: document.getElementById('closeModal'),
+	// video: document.getElementById('video'),
 	
 
 	gameSetUp: function (){
@@ -114,11 +141,20 @@ var game = {
 
 			// this line decides what happens when you win
 			if (this.tallyWin() === true) {
-				// restart game.
-				this.restartGame();
+				// // should restart game when user closes the modal
+				// this.restartGame();
+
+				// if tallyWin is true open modal.
+				// open modal.
+				this.modal.style.display = "block";
+				$("#alert").html("You Won!");
+				// get video
+				$("#video").html('<iframe width="560" height="315" src="' + this.namesToPick[this.nameInPlay].video + '" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>');
+
 			};
 		};
 	},
+
 	// this function decides what happens with the guess it wrong
 	whenGuessWrong: function(letter){
 		// console.log("whenGuessWrong function is being hit");
@@ -126,19 +162,20 @@ var game = {
 		if ((this.guessedLetters.indexOf(letter) === -1) && (this.lettersInPlay.indexOf(letter) === -1)) {
 		// add it to guessedLetters and
 			this.guessedLetters.push(letter);
-			console.log("guessed letters array: " + this.guessedLetters);
 		// -1 from guessesLeft.
 			this.guessesLeft--;
 		// update the the guessesLeft  and the guessedLetters on the DOM
 			$("#guesses-left").html("You now have " + this.guessesLeft + " guesses left.");
-			$("#letters-guessed").html(this.guessedLetters);
+			// the .join method joins items in an array. I use this method so I can put a comma between each item.
+			$("#letters-guessed").html(this.guessedLetters.join(", "));
 		}
 		// when guessesLeft = 0 restart game
 		if (this.guessesLeft === 0) {
 			this.losses = this.losses + 1;
 			console.log(this.losses);
 			$("#losses").html(this.losses);
-			this.restartGame();
+			this.modal.style.display = "block";
+			$("#alert").html("Sorry you ran out of guesses.");
 		}
 
 	},
@@ -184,7 +221,7 @@ var game = {
 			};
 		};
 		// display blanks on page:
-		$("#name-view").html("<h3>" + wordString + "</h3>");
+		$("#name-view").html("<p>" + wordString + "</p>");
 	},
 
 	// this function restarts the game when a win or all guesses are used.
@@ -245,3 +282,20 @@ document.onkeyup = function(event){
 	// console.log("guessed letter: " + game.letterGuessed); //testing...letterGuessed can only store one value at a time.
 	game.updatePage(game.letterGuessed);
 };
+// close modal.
+// when play again button is hit...
+$("#playAgain").on('click', function(){
+	// change the display style of the modal to "none" which will close the modal.
+	game.modal.style.display = "none";
+	// ...and restart game.
+	game.restartGame();
+});
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == game.modal) {
+        game.modal.style.display = "none";
+        game.restartGame();
+    }
+};
+
+

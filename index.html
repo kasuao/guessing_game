@@ -11,30 +11,52 @@
   <body> 
     <div id="header"><img src="assets/images/banner.png"></div>
     <div class="container">
+        <div id="spaces" class="col-sm-12">
+          <p id="name-view"></p>
+        </div>
         <div class="col-sm-12">
           <h2 id="view-hint" ></h2>
           
         </div>
-        <div id="spaces" class="col-sm-12">
-          <p id="name-view"></p>
-        </div>
-        <div class="col-sm-2"></div>
-        <div id="guesses-left"  class="box1 col-sm-2">
+        <div id="guesses-left"  class="col-sm-12">
           
         </div>
-        <div class="box1 col-sm-2" >
-          <h4>Letters Guessed:</h4>
-          <h3 id="letters-guessed"></h3>
+        <div class="box2 col-sm-12" >
+          <h4 style="text-decoration: underline;">Letters Guessed:</h4>
+          <h1 id="letters-guessed"></h1>
         </div>
-        <div class="box1 col-sm-2" >
-          <h1>Wins: <span id="wins"></span></h1>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+        <div class="box1 col-sm-1" >
+          <h5>Wins: <span id="wins"></span></h5>
         </div>
-        <div class="box1 col-sm-2">
-          <h1>losses: <span id="losses"></span></h1>
+        <div class="box1 col-sm-1">
+          <h5>Losses: <span id="losses"></span></h5>
         </div>
-        <div class="col-sm-2"></div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
       </div>
     </div>
+    <!-- The Modal which should remain hidden as directed by css properties-->
+  <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <h1 id="alert"></h1>
+        <!-- <video id="video"></video> -->
+        <div id="video">
+          
+        </div>
+          <button id="playAgain" class="btn btn-success">Play Again</button>
+      </div>
+
+  </div>
     <!-- jquery cdn -->
     <script
   src="https://code.jquery.com/jquery-3.2.1.js"

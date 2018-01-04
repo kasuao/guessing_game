@@ -9,11 +9,11 @@ body {
 	background-image: url(../images/header-bg.png);
 	background-color: rgb(35, 35, 239);
 	text-align: center;
-	height: 153px;
+	height: 160px;
 	width: 100%;
 	margin: 0;
 	padding: 20px;
-	border-bottom: solid 10px #fff;
+	border-bottom: solid 20px #fff;
 
 }
 .container {
@@ -36,17 +36,24 @@ body {
 	text-align: center;
 }
 #guesses-left {
-	font-size: 18px;
+	font-size: 24px;
 	color: #F81014;
 }
 
 .box1 {
-	float: left;
 	color: #fff;
-	border: solid 4px #fff;
+	border: solid 1px #fff;
 	margin: 5px;
 	padding: 10px;
 	background-color: #333;
+	height: 60px;
+	text-align: left;
+}
+
+.box2 {
+	color: #fff;
+	/*border: solid 1px #333;*/
+	padding: 10px;
 	height: 150px;
 }
 
@@ -57,6 +64,31 @@ body {
 	float: center;
 }
 #name-view {
-	font-size: 200px;
+	font-size: 80px;
 	font-weight: bold;
 }
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
